@@ -152,8 +152,8 @@ class PMUPublisherV2(PMUPublisher):
                 self.load_masks,
                 self.gen_masks,
             ):
-                v_pol = self.complex2pol([v[mask_v]])
-                freq_data.append((freq_est[mask_v] + 1)*50)
+                v_pol = self.complex2pol(v[mask_v])
+                freq_data.append((freq_est[mask_v[0]] + 1)*50)
                 
                 line_from_pol = self.complex2pol(line_currents_from[line_mask_from])
                 line_to_pol = self.complex2pol(line_currents_to[line_mask_to])
